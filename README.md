@@ -6,7 +6,33 @@ Bindings for the Stanford Named Entity Recognizer (NER), which we affectionately
 
 Getting CLAVIN-NERD integrated with CLAVIN is quite simple.
 
-### Programmatically
+### Get it from Berico's Nexus Repo
+
+Reference the Berico Technologies Nexus Repository in your Maven `pom.xml`:
+
+```xml
+<repositories>
+  <repository>
+     <id>nexus.bericotechnologies.com</id>
+     <name>Berico Technologies Nexus</name>
+     <url>http://nexus.bericotechnologies.com/content/groups/public</url>
+     <releases><enabled>true</enabled></releases>
+     <snapshots><enabled>true</enabled></snapshots>
+  </repository>
+</repositories>
+```
+
+Add a dependency on the CLAVIN-NERD project:
+
+```xml
+<dependency>
+   <groupId>com.berico</groupId>
+   <artifactId>clavin-nerd</artifactId>
+   <version>0.3.1</version>
+</dependency>
+```
+
+### Instantiate Programmatically
 
 Instantiate a `SequenceClassifierProvider`, inject it into the `NerdLocationExtractor`, and inject that into `GeoParser`.
 
